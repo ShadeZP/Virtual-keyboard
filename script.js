@@ -5,13 +5,13 @@ const KEYS = [
       caps: '`',
       caseDown: '`',
       caseUp: '~',
-      shiftCaps: '~',
+      loverCaps: '~',
     },
     rus: {
       caps: 'Ё',
       caseDown: 'ё',
       caseUp: 'Ё',
-      shiftCaps: 'ё',
+      loverCaps: 'ё',
     },
   }, {
     code: 'Digit1',
@@ -19,13 +19,13 @@ const KEYS = [
       caps: '1',
       caseDown: '1',
       caseUp: '!',
-      shiftCaps: '!',
+      loverCaps: '!',
     },
     rus: {
       caps: '1',
       caseDown: '1',
       caseUp: '!',
-      shiftCaps: '!',
+      loverCaps: '!',
     },
   }, {
     code: 'Digit2',
@@ -33,13 +33,13 @@ const KEYS = [
       caps: '2',
       caseDown: '2',
       caseUp: '@',
-      shiftCaps: '@',
+      loverCaps: '@',
     },
     rus: {
       caps: '2',
       caseDown: '2',
       caseUp: '"',
-      shiftCaps: '"',
+      loverCaps: '"',
     },
   }, {
     code: 'Digit3',
@@ -47,13 +47,13 @@ const KEYS = [
       caps: '3',
       caseDown: '3',
       caseUp: '#',
-      shiftCaps: '#',
+      loverCaps: '#',
     },
     rus: {
       caps: '3',
       caseDown: '3',
       caseUp: '№',
-      shiftCaps: '№',
+      loverCaps: '№',
     },
   }, {
     code: 'Digit4',
@@ -61,13 +61,13 @@ const KEYS = [
       caps: '4',
       caseDown: '4',
       caseUp: '$',
-      shiftCaps: '$',
+      loverCaps: '$',
     },
     rus: {
       caps: '4',
       caseDown: '4',
       caseUp: ';',
-      shiftCaps: ';',
+      loverCaps: ';',
     },
   }, {
     code: 'Digit5',
@@ -75,13 +75,13 @@ const KEYS = [
       caps: '5',
       caseDown: '5',
       caseUp: '%',
-      shiftCaps: '%',
+      loverCaps: '%',
     },
     rus: {
       caps: '5',
       caseDown: '5',
       caseUp: '%',
-      shiftCaps: '%',
+      loverCaps: '%',
     },
   }, {
     code: 'Digit6',
@@ -89,13 +89,13 @@ const KEYS = [
       caps: '6',
       caseDown: '6',
       caseUp: '^',
-      shiftCaps: '^',
+      loverCaps: '^',
     },
     rus: {
       caps: '6',
       caseDown: '6',
       caseUp: ':',
-      shiftCaps: ':',
+      loverCaps: ':',
     },
   }, {
     code: 'Digit7',
@@ -103,13 +103,13 @@ const KEYS = [
       caps: '7',
       caseDown: '7',
       caseUp: '&',
-      shiftCaps: '&',
+      loverCaps: '&',
     },
     rus: {
       caps: '7',
       caseDown: '7',
       caseUp: '?',
-      shiftCaps: '?',
+      loverCaps: '?',
     },
   }, {
     code: 'Digit8',
@@ -117,13 +117,13 @@ const KEYS = [
       caps: '8',
       caseDown: '8',
       caseUp: '*',
-      shiftCaps: '*',
+      loverCaps: '*',
     },
     rus: {
       caps: '8',
       caseDown: '8',
       caseUp: '*',
-      shiftCaps: '*',
+      loverCaps: '*',
     },
   }, {
     code: 'Digit9',
@@ -131,13 +131,13 @@ const KEYS = [
       caps: '9',
       caseDown: '9',
       caseUp: '(',
-      shiftCaps: '(',
+      loverCaps: '(',
     },
     rus: {
       caps: '9',
       caseDown: '9',
       caseUp: '(',
-      shiftCaps: '(',
+      loverCaps: '(',
     },
   }, {
     code: 'Digit0',
@@ -145,13 +145,13 @@ const KEYS = [
       caps: '0',
       caseDown: '0',
       caseUp: ')',
-      shiftCaps: ')',
+      loverCaps: ')',
     },
     rus: {
       caps: '0',
       caseDown: '0',
       caseUp: ')',
-      shiftCaps: ')',
+      loverCaps: ')',
     },
   }, {
     code: 'Minus',
@@ -159,13 +159,13 @@ const KEYS = [
       caps: '-',
       caseDown: '-',
       caseUp: '_',
-      shiftCaps: '_',
+      loverCaps: '_',
     },
     rus: {
       caps: '-',
       caseDown: '-',
       caseUp: '_',
-      shiftCaps: '_',
+      loverCaps: '_',
     },
   }, {
     code: 'Equal',
@@ -173,13 +173,13 @@ const KEYS = [
       caps: '=',
       caseDown: '=',
       caseUp: '+',
-      shiftCaps: '+',
+      loverCaps: '+',
     },
     rus: {
       caps: '=',
       caseDown: '=',
       caseUp: '+',
-      shiftCaps: '+',
+      loverCaps: '+',
     },
   }, {
     code: 'Backspace',
@@ -307,13 +307,13 @@ const KEYS = [
       caps: '[',
       caseDown: '[',
       caseUp: '{',
-      shiftCaps: '{',
+      loverCaps: '{',
     },
     rus: {
       caps: 'Х',
       caseDown: 'х',
       caseUp: 'Х',
-      shiftCaps: 'х',
+      loverCaps: 'х',
     },
   }, {
     code: 'BracketRight',
@@ -321,13 +321,13 @@ const KEYS = [
       caps: ']',
       caseDown: ']',
       caseUp: '}',
-      shiftCaps: '}',
+      loverCaps: '}',
     },
     rus: {
       caps: 'Ъ',
       caseDown: 'ъ',
       caseUp: 'Ъ',
-      shiftCaps: 'ъ',
+      loverCaps: 'ъ',
     },
   }, {
     code: 'Backslash',
@@ -335,13 +335,13 @@ const KEYS = [
       caps: '\\',
       caseDown: '\\',
       caseUp: '|',
-      shiftCaps: '|',
+      loverCaps: '|',
     },
     rus: {
       caps: '\\',
       caseDown: '\\',
       caseUp: '/',
-      shiftCaps: '/',
+      loverCaps: '/',
     },
   }, {
     code: 'Delete',
@@ -459,13 +459,13 @@ const KEYS = [
       caps: ';',
       caseDown: ';',
       caseUp: ':',
-      shiftCaps: ':',
+      loverCaps: ':',
     },
     rus: {
       caps: 'Ж',
       caseDown: 'ж',
       caseUp: 'Ж',
-      shiftCaps: 'ж',
+      loverCaps: 'ж',
     },
   }, {
     code: 'Quote',
@@ -473,13 +473,13 @@ const KEYS = [
       caps: "'",
       caseDown: "'",
       caseUp: '"',
-      shiftCaps: '"',
+      loverCaps: '"',
     },
     rus: {
       caps: 'Э',
       caseDown: 'э',
       caseUp: 'Э',
-      shiftCaps: 'э',
+      loverCaps: 'э',
     },
   }, {
     code: 'Enter',
@@ -577,13 +577,13 @@ const KEYS = [
       caps: ',',
       caseDown: ',',
       caseUp: '<',
-      shiftCaps: '<',
+      loverCaps: '<',
     },
     rus: {
       caps: 'Б',
       caseDown: 'б',
       caseUp: 'Б',
-      shiftCaps: 'б',
+      loverCaps: 'б',
     },
   }, {
     code: 'Period',
@@ -591,13 +591,13 @@ const KEYS = [
       caps: '.',
       caseDown: '.',
       caseUp: '>',
-      shiftCaps: '>',
+      loverCaps: '>',
     },
     rus: {
       caps: 'Ю',
       caseDown: 'ю',
       caseUp: 'Ю',
-      shiftCaps: 'ю',
+      loverCaps: 'ю',
     },
   }, {
     code: 'Slash',
@@ -605,13 +605,13 @@ const KEYS = [
       caps: '/',
       caseDown: '/',
       caseUp: '?',
-      shiftCaps: '?',
+      loverCaps: '?',
     },
     rus: {
       caps: '.',
       caseDown: '.',
       caseUp: ',',
-      shiftCaps: ',',
+      loverCaps: ',',
     },
   }, {
     code: 'ArrowUp',
@@ -763,7 +763,7 @@ class Key {
       template += `<span class="caseDown">${this.rus.caseDown}</span>`;
       template += `<span class="caseUP hidden">${this.rus.caseUp}</span>`;
       template += `<span class="caps hidden">${this.rus.caps || this.rus.caseUp}</span>`;
-      template += `<span class="shiftCaps hidden">${this.rus.shiftCaps || this.rus.caseDown}</span>`;
+      template += `<span class="loverCaps hidden">${this.rus.loverCaps || this.rus.caseDown}</span>`;
       template += '</span>';
     }
 
@@ -772,7 +772,7 @@ class Key {
       template += `<span class="caseDown hidden">${this.eng.caseDown}</span>`;
       template += `<span class="caseUP hidden">${this.eng.caseUp}</span>`;
       template += `<span class="caps hidden">${this.eng.caps || this.eng.caseUp}</span>`;
-      template += `<span class="shiftCaps hidden">${this.eng.shiftCaps || this.eng.caseDown}</span>`;
+      template += `<span class="loverCaps hidden">${this.eng.loverCaps || this.eng.caseDown}</span>`;
       template += '</span>';
     }
 
@@ -808,30 +808,75 @@ const pressedKey = {
 };
 
 const settings = {
-  get lang() {
-    return localStorage.getItem('lang') || 'rus';
-  },
-  set lang(value) {
-    localStorage.setItem('lang', value);
-  },
+  lang: 'rus',
   case: 'caseDown',
+  ShiftLeftActive: false,
+  ShiftRightActive: false,
+  CapsLockActive: false,
 };
 
-const toggleLang = () => {
+function changeCase() {
+  const elem = document.querySelectorAll(`span.${settings.lang}`);
+  for (let i = 0; i < elem.length; i += 1) {
+    for (let j = 0; j < 3; j += 1) {
+      if (!elem[i].querySelectorAll('span')[j].classList.contains('hidden')) {
+        elem[i].querySelectorAll('span')[j].classList.add('hidden');
+      }
+    }
+    if (settings.CapsLockActive && (settings.ShiftLeftActive || settings.ShiftRightActive)) {
+      elem[i].querySelectorAll('span')[3].classList.remove('hidden');
+      settings.case = 'loverCaps';
+    } else if (settings.CapsLockActive) {
+      elem[i].querySelectorAll('span')[2].classList.remove('hidden');
+      settings.case = 'caps';
+    } else if (settings.ShiftRightActive || settings.ShiftLeftActive) {
+      elem[i].querySelectorAll('span')[1].classList.remove('hidden');
+      settings.case = 'caseUp';
+    } else {
+      elem[i].querySelectorAll('span')[0].classList.remove('hidden');
+      settings.case = 'caseDown';
+    }
+  }
+}
+
+const changeLang = () => {
   const elem = document.querySelectorAll(`span.${settings.lang}`);
   for (let i = 0; i < elem.length; i += 1) {
     elem[i].classList.toggle('hidden');
     elem[i].querySelectorAll(`span.${settings.case}`)[0].classList.toggle('hidden');
   }
-  settings.lang = settings.lang === 'rus' ? 'eng' : 'rus';
+  if (settings.lang === 'rus') {
+    settings.lang = 'eng';
+  } else {
+    settings.lang = 'rus';
+  }
+  localStorage.setItem('lang', settings.lang);
   const toggleElem = document.querySelectorAll(`span.${settings.lang}`);
-  for (let i = 0; i < elem.length; i += 1) {
-    toggleElem[i].classList.toggle('hidden');
-    toggleElem[i].querySelectorAll(`span.${settings.case}`)[0].classList.toggle('hidden');
+  for (let j = 0; j < toggleElem.length; j += 1) {
+    toggleElem[j].classList.toggle('hidden');
+    toggleElem[j].querySelectorAll(`span.${settings.case}`)[0].classList.toggle('hidden');
   }
 };
 
+function initLanguage() {
+  if (localStorage.lang === 'eng') {
+    changeLang();
+  }
+}
+
 let textArea = null;
+
+function addActive() {
+  pressedKey.element.classList.add('active');
+}
+
+function removeActive() {
+  if (pressedKey.element) {
+    if (pressedKey.element.classList.contains('active')) {
+      pressedKey.element.classList.remove('active');
+    }
+  }
+}
 
 function KeyFunction() {
   let cursorPosition = textArea.selectionStart;
@@ -846,7 +891,6 @@ function KeyFunction() {
     }
     textArea.selectionEnd = cursorPosition;
   }
-
   switch (pressedKey.code) {
     case 'Backspace':
       if (textArea.selectionStart >= 0 && textArea.selectionStart <= textArea.value.length) {
@@ -882,25 +926,32 @@ function KeyFunction() {
       write();
       break;
     case 'CapsLock':
-      toggleLang();
+      if (settings.CapsLockActive) {
+        settings.CapsLockActive = false;
+      } else {
+        settings.CapsLockActive = true;
+      }
+      changeCase();
       break;
-    // case 'Backspace':
-    //   console.log (1);
-    //   break;
-    // case 'Backspace':
-    //   console.log (1);
-    //   break;
-    // case 'Backspace':
-    //   console.log (1);
-    //   break;
-    // case 'Backspace':
-    //   console.log (1);
-    //   break;
+    case 'ShiftLeft':
+      if (!settings.ShiftLeftActive && !settings.ShiftRightActive) {
+        addActive();
+        settings.ShiftLeftActive = true;
+        changeCase();
+      }
+      break;
+    case 'ShiftRight':
+      if (!settings.ShiftLeftActive && !settings.ShiftRightActive) {
+        addActive();
+        settings.ShiftRightActive = true;
+        changeCase();
+      }
+      break;
     default:
       write();
   }
-  if (pressedKey.event.altKey && pressedKey.event.shiftKey) {
-    toggleLang();
+  if (pressedKey.event.altKey && pressedKey.event.ctrlKey) {
+    changeLang();
   }
 }
 
@@ -911,43 +962,72 @@ function keyDownHandler(event) {
   [pressedKey.element] = document.getElementsByClassName(event.code);
   pressedKey.char = pressedKey.element.querySelectorAll(':not(.hidden)')[1].textContent;
   KeyFunction();
+  addActive();
 // "MetaLeft" === pressedKey.code ? (this.addActiveState(), setTimeout(removeActiveState.bind(this), 300)) : ["CapsLock", "ShiftLeft", "ShiftRight"].includes(pressedKey.code) || addActiveState();
 }
 
-// const KeyUpHandler = {
+function KeyUpHandler(event) {
+  const elem = document.getElementsByClassName(event.code)[0];
+  if (elem) {
+    pressedKey.element = elem.closest('div');
+  }
+  if (event.code === 'ShiftLeft') {
+    settings.ShiftLeftActive = false;
+    removeActive();
+    changeCase();
+  } else if (event.code === 'ShiftRight') {
+    settings.ShiftRightActive = false;
+    removeActive();
+    changeCase();
+  } else {
+    removeActive();
+  }
+}
 
-// };
+function mouseDownHandler(event) {
+  if (event.target.tagName.toLowerCase() === 'span') {
+    pressedKey.event = event;
+    pressedKey.element = event.target.closest('div');
+    [, , pressedKey.code] = pressedKey.element.classList;
+    pressedKey.char = event.target.textContent;
+    KeyFunction();
+    addActive();
+    event.preventDefault();
+  }
+}
 
-// function mouseDownHandler(event) {
-//   const target = event.target;
-//   const elem = target.closest('div');
-  // let code = elem.dataset.code;
-//   pressedKey.char = target.textContent;
-  // console.log (code);
-  // console.log (text);
-  // console.log (target);
-  // console.log (elem);
-//   KeyFunction();
-// };
+function mouseUpHandler(event) {
+  pressedKey.event = event;
+  pressedKey.element = event.target.closest('div');
+  if (pressedKey.element) {
+    if (pressedKey.element.classList.contains('key')) {
+      [, , pressedKey.code] = pressedKey.element.classList;
+    }
+  }
+  removeActive();
+  if (settings.ShiftLeftActive) {
+    if (pressedKey.code === 'ShiftLeft') {
+      settings.ShiftLeftActive = false;
+      changeCase();
+    }
+  }
+  if (settings.ShiftRightActive) {
+    if (pressedKey.code === 'ShiftRight') {
+      settings.ShiftRightActive = false;
+      changeCase();
+    }
+  }
+}
 
-// const MouseUpHandler = {
-
-// };
-
-
-document.addEventListener('keydown', keyDownHandler);
-// document.addEventListener('keyup', keyUpHandler);
-// document.addEventListener('mousedown', mouseDownHandler);
-// document.addEventListener('mouseup', mouseUpHandler);
 window.onload = function init() {
   if (KEYS) {
     const textarea = document.createElement('textarea');
     const title = document.createElement('p');
     const keyboard = document.createElement('div');
-    title.innerText = 'Переключение языков пока Alt + Shift';
+    title.innerText = 'Переключение языков пока Ctrl + Alt';
     textarea.classList.add('textarea');
     textarea.setAttribute('id', 'textarea');
-    // textarea.autofocus = true;
+    textarea.autofocus = true;
     title.classList.add('title'); // TODO нет такого стиля доделать
     keyboard.classList.add('keyboard');
     document.body.append(textarea);
@@ -955,5 +1035,10 @@ window.onload = function init() {
     document.body.append(keyboard);
     renderKeysToDom();
     textArea = textarea;
+    initLanguage();
+    document.addEventListener('keydown', keyDownHandler);
+    document.addEventListener('keyup', KeyUpHandler);
+    document.addEventListener('mousedown', mouseDownHandler);
+    document.addEventListener('mouseup', mouseUpHandler);
   }
 };

@@ -1,15 +1,4 @@
-const TextArea = document.createElement('textarea');
-const Title = document.createElement('p');
-const Keyboard = document.createElement('div');
-Title.innerText = 'Переключение языков пока хз';
-TextArea.classList.add('textarea');
-Title.classList.add('title'); // TODO нет такого стиля доделать
-Keyboard.classList.add('keyboard');
-document.body.append(TextArea);
-document.body.append(Title);
-document.body.append(Keyboard);
-
-const Keys = [
+const KEYS = [
   {
     code: 'Backquote',
     eng: {
@@ -736,7 +725,6 @@ const Keys = [
     },
   },
 ];
-
 class Key {
   constructor({ code, eng, rus }) {
     this.code = code;
@@ -747,42 +735,44 @@ class Key {
   generateKey() {
     let template = '';
     const key = document.createElement('div');
+
     switch (this.code) {
       case 'Backspace':
       case 'CapsLock':
       case 'ShiftLeft':
-        key.className = 'key large';
+        key.className = `key large ${this.code}`;
         break;
       case 'Tab':
-        key.className = 'key Tab';
+        key.className = `key Tab ${this.code}`;
         break;
       case 'Enter':
       case 'ShiftRight':
-        key.className = 'key middle';
+        key.className = `key middle ${this.code}`;
         break;
       case 'Space':
-        key.className = 'key Space';
+        key.className = `key Space ${this.code}`;
         break;
       default:
-        key.className = 'key';
+        key.className = `key ${this.code}`;
     }
-    // key.className = 'key';
-    key.setAttribute('data-code', this.code);
+
+    // key.setAttribute('data-code', this.code);
 
     if (this.rus) {
       template += '<span class="rus">';
       template += `<span class="caseDown">${this.rus.caseDown}</span>`;
       template += `<span class="caseUP hidden">${this.rus.caseUp}</span>`;
-      template += `<span class="caps hidden">${this.rus.caps}</span>`;
-      template += `<span class="shiftCaps hidden">${this.rus.shiftCaps}</span>`;
+      template += `<span class="caps hidden">${this.rus.caps || this.rus.caseUp}</span>`;
+      template += `<span class="shiftCaps hidden">${this.rus.shiftCaps || this.rus.caseDown}</span>`;
       template += '</span>';
     }
+
     if (this.eng) {
       template += '<span class="eng hidden">';
-      template += `<span class="caseDown hidden">${this.rus.caseDown}</span>`;
-      template += `<span class="caseUP hidden">${this.rus.caseUp}</span>`;
-      template += `<span class="caps hidden">${this.rus.caps}</span>`;
-      template += `<span class="shiftCaps hidden">${this.rus.shiftCaps}</span>`;
+      template += `<span class="caseDown hidden">${this.eng.caseDown}</span>`;
+      template += `<span class="caseUP hidden">${this.eng.caseUp}</span>`;
+      template += `<span class="caps hidden">${this.eng.caps || this.eng.caseUp}</span>`;
+      template += `<span class="shiftCaps hidden">${this.eng.shiftCaps || this.eng.caseDown}</span>`;
       template += '</span>';
     }
 
@@ -791,7 +781,7 @@ class Key {
   }
 }
 
-const GenerateKeys = (data) => {
+const generateKeys = (data) => {
   const keys = [];
   data.forEach((key) => {
     keys.push(new Key(key));
@@ -799,15 +789,171 @@ const GenerateKeys = (data) => {
   return keys;
 };
 
-const renderKeysToDOm = () => {
+const renderKeysToDom = () => {
   const container = document.querySelector('.keyboard');
-  GenerateKeys(Keys).forEach((key) => {
-    container.append(key.generateKey());
+  const frag = document.createDocumentFragment();
+  generateKeys(KEYS).forEach((key) => {
+    frag.append(key.generateKey());
   });
+  container.append(frag);
 };
 
+const eventKeys = ['Backspace', 'Tab', 'Delete', 'Enter', 'CapsLock', 'ShiftLeft', 'ShiftRight', 'ControlLeft', 'MetaLeft', 'AltLeft', 'AltRight', 'ControlRight'];
+
+const pressedKey = {
+  event: null,
+  code: null,
+  element: null,
+  char: null,
+};
+
+const settings = {
+  get lang() {
+    return localStorage.getItem('lang') || 'rus';
+  },
+  set lang(value) {
+    localStorage.setItem('lang', value);
+  },
+  case: 'caseDown',
+};
+
+const toggleLang = () => {
+  const elem = document.querySelectorAll(`span.${settings.lang}`);
+  for (let i = 0; i < elem.length; i += 1) {
+    elem[i].classList.toggle('hidden');
+    elem[i].querySelectorAll(`span.${settings.case}`)[0].classList.toggle('hidden');
+  }
+  settings.lang = settings.lang === 'rus' ? 'eng' : 'rus';
+  const toggleElem = document.querySelectorAll(`span.${settings.lang}`);
+  for (let i = 0; i < elem.length; i += 1) {
+    toggleElem[i].classList.toggle('hidden');
+    toggleElem[i].querySelectorAll(`span.${settings.case}`)[0].classList.toggle('hidden');
+  }
+};
+
+let textArea = null;
+
+function KeyFunction() {
+  let cursorPosition = textArea.selectionStart;
+  const cursorPositionEnd = textArea.selectionEnd;
+  function write() {
+    if (textArea.selectionStart >= 0 && textArea.selectionStart <= textArea.value.length) {
+      textArea.value = textArea.value.slice(0, cursorPosition) + pressedKey.char
+      + textArea.value.slice(cursorPosition);
+      cursorPosition += pressedKey.char.length;
+    } else {
+      textArea.value += pressedKey.char;
+    }
+    textArea.selectionEnd = cursorPosition;
+  }
+
+  switch (pressedKey.code) {
+    case 'Backspace':
+      if (textArea.selectionStart >= 0 && textArea.selectionStart <= textArea.value.length) {
+        if (textArea.selectionStart !== textArea.selectionEnd) {
+          textArea.value = textArea.value.slice(0, cursorPosition)
+          + textArea.value.slice(cursorPositionEnd, textArea.value.length);
+        } else {
+          textArea.value = textArea.value.slice(0, cursorPosition - 1)
+          + textArea.value.slice(cursorPosition, textArea.value.length);
+          cursorPosition -= 1;
+        }
+      }
+      textArea.selectionEnd = cursorPosition;
+      break;
+    case 'Tab':
+      pressedKey.char = '\t';
+      write();
+      break;
+    case 'Delete':
+      if (textArea.selectionStart >= 0 && textArea.selectionStart <= textArea.value.length) {
+        if (textArea.selectionStart !== textArea.selectionEnd) {
+          textArea.value = textArea.value.slice(0, cursorPosition)
+          + textArea.value.slice(cursorPositionEnd, textArea.value.length);
+        } else {
+          textArea.value = textArea.value.slice(0, cursorPosition)
+          + textArea.value.slice(cursorPosition + 1, textArea.value.length);
+        }
+      }
+      textArea.selectionEnd = cursorPosition;
+      break;
+    case 'Enter':
+      pressedKey.char = '\n';
+      write();
+      break;
+    case 'CapsLock':
+      toggleLang();
+      break;
+    // case 'Backspace':
+    //   console.log (1);
+    //   break;
+    // case 'Backspace':
+    //   console.log (1);
+    //   break;
+    // case 'Backspace':
+    //   console.log (1);
+    //   break;
+    // case 'Backspace':
+    //   console.log (1);
+    //   break;
+    default:
+      write();
+  }
+  if (pressedKey.event.altKey && pressedKey.event.shiftKey) {
+    toggleLang();
+  }
+}
+
+function keyDownHandler(event) {
+  event.preventDefault();
+  pressedKey.event = event;
+  pressedKey.code = event.code;
+  [pressedKey.element] = document.getElementsByClassName(event.code);
+  pressedKey.char = pressedKey.element.querySelectorAll(':not(.hidden)')[1].textContent;
+  KeyFunction();
+// "MetaLeft" === pressedKey.code ? (this.addActiveState(), setTimeout(removeActiveState.bind(this), 300)) : ["CapsLock", "ShiftLeft", "ShiftRight"].includes(pressedKey.code) || addActiveState();
+}
+
+// const KeyUpHandler = {
+
+// };
+
+// function mouseDownHandler(event) {
+//   const target = event.target;
+//   const elem = target.closest('div');
+  // let code = elem.dataset.code;
+//   pressedKey.char = target.textContent;
+  // console.log (code);
+  // console.log (text);
+  // console.log (target);
+  // console.log (elem);
+//   KeyFunction();
+// };
+
+// const MouseUpHandler = {
+
+// };
+
+
+document.addEventListener('keydown', keyDownHandler);
+// document.addEventListener('keyup', keyUpHandler);
+// document.addEventListener('mousedown', mouseDownHandler);
+// document.addEventListener('mouseup', mouseUpHandler);
 window.onload = function init() {
-  if (Keys) {
-    renderKeysToDOm();
+  if (KEYS) {
+    const textarea = document.createElement('textarea');
+    const title = document.createElement('p');
+    const keyboard = document.createElement('div');
+    title.innerText = 'Переключение языков пока Alt + Shift';
+    textarea.classList.add('textarea');
+    textarea.setAttribute('id', 'textarea');
+    // textarea.autofocus = true;
+    title.classList.add('title'); // TODO нет такого стиля доделать
+    keyboard.classList.add('keyboard');
+    document.body.append(textarea);
+    document.body.append(title);
+    document.body.append(keyboard);
+    renderKeysToDom();
+    textArea = textarea;
   }
 };

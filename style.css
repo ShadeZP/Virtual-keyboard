@@ -1,6 +1,5 @@
 .centralizer {
     margin: 0 auto;
-    font-family: "Trebuchet MS", "Helvetica", sans-serif
 }
 
 .textarea {
@@ -35,20 +34,17 @@
 
 .title {
     font-size: 30px;
-    color: rgba(101, 134, 177, 0.8);
-    -webkit-text-stroke: 1px rgba(114, 177, 101, 0.8);
-    -webkit-text-fill-color: rgba(101, 134, 177, 0.8)
 }
 
 .keyboard {
     width: 704px;
     margin: 0 auto;
-    padding: 5px;
+    padding: 2px;
     padding-left: 0;
     padding-bottom: 12px;
     background: #888888;
     border: 3px solid #222222;
-    border-radius: 5px;
+    border-radius: 2px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -61,7 +57,6 @@
 }
 
 .key {
-    /* float: left; */
     width: 40px;
     height: 40px;
     margin-left: 6px;
@@ -70,45 +65,87 @@
     line-height: 40px;
     text-align: center;
     color: #ffffff;
-    /* background: black; */
     background-image: linear-gradient(to right, #000000 0%, #3D3D3D 51%, #828288 100%);
     background-size: 200% auto;
     transition: 1s;
     border-radius: 3px;
     cursor: pointer;
     user-select: none;
-    /* transition: border-radius 0.3s, background-color 0.3s */
+}
+
+.keyboard .key.active {    
+    font-size: 1.4rem;
+    color: red;
+    animation: 0.1s tremor ease-out infinite;
+    -webkit-animation: 0.1s tremor ease-out infinite; 
+}
+
+@-webkit-keyframes tremor {
+    0%, 25% {
+        left: -1px;
+        top:-1px;
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px);
+    }
+    50%, 100% {
+        left: 1px;
+        top: 1px;
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+}
+@-moz-keyframes tremor {
+    0%, 25% {
+        left: -1px;
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px);
+    }
+    50%, 100% {
+        left: 1px;
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+}
+@-ms-keyframes tremor {
+    0%, 25% {
+        left: -1px;
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px);
+    }
+    50%, 100% {
+        left: 1px;
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+}
+@-o-keyframes tremor {
+    0%, 25% {
+        left: -1px;
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px);
+    }
+    50%, 100% {
+        left: 1px;
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+}
+@keyframes tremor {
+    0%, 25% {
+        left: -1px;
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px);
+    }
+    50%, 100% {
+        left: 1px;
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
 }
 
 .key:hover {
-    /* background: #79aa89 */
     background-position: right center;
 }
-
-.keyboard .key.active {
-    background-color: #2cfd72;
-    border-radius: 50px
-}
-
-/* .keyboard .AltLeft,
-.keyboard .AltRight,
-.keyboard .ArrowUp,
-.keyboard .ArrowLeft,
-.keyboard .ArrowDown,
-.keyboard .ArrowRight,
-.keyboard .Backspace,
-.keyboard .CapsLock,
-.keyboard .ControlLeft,
-.keyboard .ControlRight,
-.keyboard .Delete,
-.keyboard .Enter,
-.keyboard .ShiftLeft,
-.keyboard .ShiftRight,
-.keyboard .Tab,
-.keyboard .MetaLeft {
-    font-weight: 600;
-    background-color: #222222
-} */
 
 .keyboard .Tab {
     width: 50px
@@ -117,10 +154,6 @@
 .keyboard .large {
     width: 100px
 }
-
-/* .keyboard .Delete {
-    width: 44px
-} */
 
 .keyboard .middle {
     width: 86px

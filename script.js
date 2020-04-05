@@ -1,3 +1,7 @@
+const textarea = document.createElement('textarea');
+const title = document.createElement('p');
+const keyboard = document.createElement('div');
+
 const KEYS = [
   {
     code: 'Backquote',
@@ -184,122 +188,170 @@ const KEYS = [
   }, {
     code: 'Backspace',
     eng: {
+      caps: 'Backspace',
       caseDown: 'Backspace',
       caseUp: 'Backspace',
+      loverCaps: 'Backspace',
     },
     rus: {
+      caps: 'Backspace',
       caseDown: 'Backspace',
       caseUp: 'Backspace',
+      loverCaps: 'Backspace',
     },
   }, {
     code: 'Tab',
     eng: {
+      caps: 'Tab',
       caseDown: 'Tab',
       caseUp: 'Tab',
+      loverCaps: 'Tab',
     },
     rus: {
+      caps: 'Tab',
       caseDown: 'Tab',
       caseUp: 'Tab',
+      loverCaps: 'Tab',
     },
   }, {
     code: 'KeyQ',
     eng: {
+      caps: 'Q',
       caseDown: 'q',
       caseUp: 'Q',
+      loverCaps: 'q',
     },
     rus: {
+      caps: 'Й',
       caseDown: 'й',
       caseUp: 'Й',
+      loverCaps: 'й',
     },
   }, {
     code: 'KeyW',
     eng: {
+      caps: 'W',
       caseDown: 'w',
       caseUp: 'W',
+      loverCaps: 'w',
     },
     rus: {
+      caps: 'Ц',
       caseDown: 'ц',
       caseUp: 'Ц',
+      loverCaps: 'ц',
     },
   }, {
     code: 'KeyE',
     eng: {
+      caps: 'E',
       caseDown: 'e',
       caseUp: 'E',
+      loverCaps: 'e',
     },
     rus: {
+      caps: 'У',
       caseDown: 'у',
       caseUp: 'У',
+      loverCaps: 'у',
     },
   }, {
     code: 'KeyR',
     eng: {
+      caps: 'R',
       caseDown: 'r',
       caseUp: 'R',
+      loverCaps: 'r',
     },
     rus: {
+      caps: 'К',
       caseDown: 'к',
       caseUp: 'К',
+      loverCaps: 'к',
     },
   }, {
     code: 'KeyT',
     eng: {
+      caps: 'T',
       caseDown: 't',
       caseUp: 'T',
+      loverCaps: 't',
     },
     rus: {
+      caps: 'Е',
       caseDown: 'е',
       caseUp: 'Е',
+      loverCaps: 'е',
     },
   }, {
     code: 'KeyY',
     eng: {
+      caps: 'Y',
       caseDown: 'y',
       caseUp: 'Y',
+      loverCaps: 'y',
     },
     rus: {
+      caps: 'Н',
       caseDown: 'н',
       caseUp: 'Н',
+      loverCaps: 'н',
     },
   }, {
     code: 'KeyU',
     eng: {
+      caps: 'U',
       caseDown: 'u',
       caseUp: 'U',
+      loverCaps: 'u',
     },
     rus: {
+      caps: 'Г',
       caseDown: 'г',
       caseUp: 'Г',
+      loverCaps: 'г',
     },
   }, {
     code: 'KeyI',
     eng: {
+      caps: 'I',
       caseDown: 'i',
       caseUp: 'I',
+      loverCaps: 'i',
     },
     rus: {
+      caps: 'Ш',
       caseDown: 'ш',
       caseUp: 'Ш',
+      loverCaps: 'ш',
     },
   }, {
     code: 'KeyO',
     eng: {
+      caps: 'O',
       caseDown: 'o',
       caseUp: 'O',
+      loverCaps: 'o',
     },
     rus: {
+      caps: 'Щ',
       caseDown: 'щ',
       caseUp: 'Щ',
+      loverCaps: 'щ',
     },
   }, {
     code: 'KeyP',
     eng: {
+      caps: 'P',
       caseDown: 'p',
       caseUp: 'P',
+      loverCaps: 'p',
     },
     rus: {
+      caps: 'З',
       caseDown: 'з',
       caseUp: 'З',
+      loverCaps: 'з',
     },
   }, {
     code: 'BracketLeft',
@@ -346,112 +398,156 @@ const KEYS = [
   }, {
     code: 'Delete',
     eng: {
+      caps: 'Del',
       caseDown: 'Del',
       caseUp: 'Del',
+      loverCaps: 'Del',
     },
     rus: {
+      caps: 'Del',
       caseDown: 'Del',
       caseUp: 'Del',
+      loverCaps: 'Del',
     },
   }, {
     code: 'CapsLock',
     eng: {
+      caps: 'CapsLock',
       caseDown: 'CapsLock',
       caseUp: 'CapsLock',
+      loverCaps: 'CapsLock',
     },
     rus: {
+      caps: 'CapsLock',
       caseDown: 'CapsLock',
       caseUp: 'CapsLock',
+      loverCaps: 'CapsLock',
     },
   }, {
     code: 'KeyA',
     eng: {
+      caps: 'A',
       caseDown: 'a',
       caseUp: 'A',
+      loverCaps: 'a',
     },
     rus: {
+      caps: 'Ф',
       caseDown: 'ф',
       caseUp: 'Ф',
+      loverCaps: 'ф',
     },
   }, {
     code: 'KeyS',
     eng: {
+      caps: 'S',
       caseDown: 's',
       caseUp: 'S',
+      loverCaps: 's',
     },
     rus: {
+      caps: 'Ы',
       caseDown: 'ы',
       caseUp: 'Ы',
+      loverCaps: 'ы',
     },
   }, {
     code: 'KeyD',
     eng: {
+      caps: 'D',
       caseDown: 'd',
       caseUp: 'D',
+      loverCaps: 'd',
     },
     rus: {
+      caps: 'В',
       caseDown: 'в',
       caseUp: 'В',
+      loverCaps: 'в',
     },
   }, {
     code: 'KeyF',
     eng: {
+      caps: 'F',
       caseDown: 'f',
       caseUp: 'F',
+      loverCaps: 'f',
     },
     rus: {
+      caps: 'А',
       caseDown: 'а',
       caseUp: 'А',
+      loverCaps: 'а',
     },
   }, {
     code: 'KeyG',
     eng: {
+      caps: 'G',
       caseDown: 'g',
       caseUp: 'G',
+      loverCaps: 'g',
     },
     rus: {
+      caps: 'П',
       caseDown: 'п',
       caseUp: 'П',
+      loverCaps: 'п',
     },
   }, {
     code: 'KeyH',
     eng: {
+      caps: 'H',
       caseDown: 'h',
       caseUp: 'H',
+      loverCaps: 'h',
     },
     rus: {
+      caps: 'Р',
       caseDown: 'р',
       caseUp: 'Р',
+      loverCaps: 'р',
     },
   }, {
     code: 'KeyJ',
     eng: {
+      caps: 'J',
       caseDown: 'j',
       caseUp: 'J',
+      loverCaps: 'j',
     },
     rus: {
+      caps: 'О',
       caseDown: 'о',
       caseUp: 'О',
+      loverCaps: 'о',
     },
   }, {
     code: 'KeyK',
     eng: {
+      caps: 'K',
       caseDown: 'k',
       caseUp: 'K',
+      loverCaps: 'k',
     },
     rus: {
+      caps: 'Л',
       caseDown: 'л',
       caseUp: 'Л',
+      loverCaps: 'л',
     },
   }, {
     code: 'KeyL',
     eng: {
+      caps: 'L',
       caseDown: 'l',
       caseUp: 'L',
+      loverCaps: 'l',
     },
     rus: {
+      caps: 'Д',
       caseDown: 'д',
       caseUp: 'Д',
+      loverCaps: 'д',
     },
   }, {
     code: 'Semicolon',
@@ -484,92 +580,128 @@ const KEYS = [
   }, {
     code: 'Enter',
     eng: {
+      caps: 'Enter',
       caseDown: 'Enter',
       caseUp: 'Enter',
+      loverCaps: 'Enter',
     },
     rus: {
+      caps: 'Enter',
       caseDown: 'Enter',
       caseUp: 'Enter',
+      loverCaps: 'Enter',
     },
   }, {
     code: 'ShiftLeft',
     eng: {
+      caps: 'Shift',
       caseDown: 'Shift',
       caseUp: 'Shift',
+      loverCaps: 'Shift',
     },
     rus: {
+      caps: 'Shift',
       caseDown: 'Shift',
       caseUp: 'Shift',
+      loverCaps: 'Shift',
     },
   }, {
     code: 'KeyZ',
     eng: {
+      caps: 'Z',
       caseDown: 'z',
       caseUp: 'Z',
+      loverCaps: 'z',
     },
     rus: {
+      caps: 'Я',
       caseDown: 'я',
       caseUp: 'Я',
+      loverCaps: 'я',
     },
   }, {
     code: 'KeyX',
     eng: {
+      caps: 'X',
       caseDown: 'x',
       caseUp: 'X',
+      loverCaps: 'x',
     },
     rus: {
+      caps: 'Ч',
       caseDown: 'ч',
       caseUp: 'Ч',
+      loverCaps: 'ч',
     },
   }, {
     code: 'KeyC',
     eng: {
+      caps: 'C',
       caseDown: 'c',
       caseUp: 'C',
+      loverCaps: 'c',
     },
     rus: {
+      caps: 'С',
       caseDown: 'с',
       caseUp: 'С',
+      loverCaps: 'с',
     },
   }, {
     code: 'KeyV',
     eng: {
+      caps: 'V',
       caseDown: 'v',
       caseUp: 'V',
+      loverCaps: 'v',
     },
     rus: {
+      caps: 'М',
       caseDown: 'м',
       caseUp: 'М',
+      loverCaps: 'м',
     },
   }, {
     code: 'KeyB',
     eng: {
+      caps: 'B',
       caseDown: 'b',
       caseUp: 'B',
+      loverCaps: 'b',
     },
     rus: {
+      caps: 'И',
       caseDown: 'и',
       caseUp: 'И',
+      loverCaps: 'и',
     },
   }, {
     code: 'KeyN',
     eng: {
+      caps: 'N',
       caseDown: 'n',
       caseUp: 'N',
+      loverCaps: 'n',
     },
     rus: {
+      caps: 'Т',
       caseDown: 'т',
       caseUp: 'Т',
+      loverCaps: 'т',
     },
   }, {
     code: 'KeyM',
     eng: {
+      caps: 'M',
       caseDown: 'm',
       caseUp: 'M',
+      loverCaps: 'm',
     },
     rus: {
+      caps: 'Ь',
       caseDown: 'ь',
       caseUp: 'Ь',
+      loverCaps: 'ь',
     },
   }, {
     code: 'Comma',
@@ -616,112 +748,156 @@ const KEYS = [
   }, {
     code: 'ArrowUp',
     eng: {
+      caps: '▲',
       caseDown: '▲',
       caseUp: '▲',
+      loverCaps: '▲',
     },
     rus: {
+      caps: '▲',
       caseDown: '▲',
       caseUp: '▲',
+      loverCaps: '▲',
     },
   }, {
     code: 'ShiftRight',
     eng: {
+      caps: 'Shift',
       caseDown: 'Shift',
       caseUp: 'Shift',
+      loverCaps: 'Shift',
     },
     rus: {
+      caps: 'Shift',
       caseDown: 'Shift',
       caseUp: 'Shift',
+      loverCaps: 'Shift',
     },
   }, {
     code: 'ControlLeft',
     eng: {
+      caps: 'Ctrl',
       caseDown: 'Ctrl',
       caseUp: 'Ctrl',
+      loverCaps: 'Ctrl',
     },
     rus: {
+      caps: 'Ctrl',
       caseDown: 'Ctrl',
       caseUp: 'Ctrl',
+      loverCaps: 'Ctrl',
     },
   }, {
     code: 'MetaLeft',
     eng: {
+      caps: 'Win',
       caseDown: 'Win',
       caseUp: 'Win',
+      loverCaps: 'Win',
     },
     rus: {
+      caps: 'Win',
       caseDown: 'Win',
       caseUp: 'Win',
+      loverCaps: 'Win',
     },
   }, {
     code: 'AltLeft',
     eng: {
+      caps: 'Alt',
       caseDown: 'Alt',
       caseUp: 'Alt',
+      loverCaps: 'Alt',
     },
     rus: {
+      caps: 'Alt',
       caseDown: 'Alt',
       caseUp: 'Alt',
+      loverCaps: 'Alt',
     },
   }, {
     code: 'Space',
     eng: {
+      caps: ' ',
       caseDown: ' ',
       caseUp: ' ',
+      loverCaps: ' ',
     },
     rus: {
+      caps: ' ',
       caseDown: ' ',
       caseUp: ' ',
+      loverCaps: ' ',
     },
   }, {
     code: 'AltRight',
     eng: {
+      caps: 'Alt',
       caseDown: 'Alt',
       caseUp: 'Alt',
+      loverCaps: 'Alt',
     },
     rus: {
+      caps: 'Alt',
       caseDown: 'Alt',
       caseUp: 'Alt',
+      loverCaps: 'Alt',
     },
   }, {
     code: 'ArrowLeft',
     eng: {
+      caps: '◄',
       caseDown: '◄',
       caseUp: '◄',
+      loverCaps: '◄',
     },
     rus: {
+      caps: '◄',
       caseDown: '◄',
       caseUp: '◄',
+      loverCaps: '◄',
     },
   }, {
     code: 'ArrowDown',
     eng: {
+      caps: '▼',
       caseDown: '▼',
       caseUp: '▼',
+      loverCaps: '▼',
     },
     rus: {
+      caps: '▼',
       caseDown: '▼',
       caseUp: '▼',
+      loverCaps: '▼',
     },
   }, {
     code: 'ArrowRight',
     eng: {
+      caps: '►',
       caseDown: '►',
       caseUp: '►',
+      loverCaps: '►',
     },
     rus: {
+      caps: '►',
       caseDown: '►',
       caseUp: '►',
+      loverCaps: '►',
     },
   }, {
     code: 'ControlRight',
     eng: {
+      caps: 'Ctrl',
       caseDown: 'Ctrl',
       caseUp: 'Ctrl',
+      loverCaps: 'Ctrl',
     },
     rus: {
+      caps: 'Ctrl',
       caseDown: 'Ctrl',
       caseUp: 'Ctrl',
+      loverCaps: 'Ctrl',
     },
   },
 ];
@@ -740,30 +916,28 @@ class Key {
       case 'Backspace':
       case 'CapsLock':
       case 'ShiftLeft':
-        key.className = `key large ${this.code}`;
+        key.className = `key ${this.code} large`;
         break;
       case 'Tab':
-        key.className = `key Tab ${this.code}`;
+        key.className = `key ${this.code} Tab`;
         break;
       case 'Enter':
       case 'ShiftRight':
-        key.className = `key middle ${this.code}`;
+        key.className = `key ${this.code} middle`;
         break;
       case 'Space':
-        key.className = `key Space ${this.code}`;
+        key.className = `key ${this.code} Space`;
         break;
       default:
         key.className = `key ${this.code}`;
     }
 
-    // key.setAttribute('data-code', this.code);
-
     if (this.rus) {
       template += '<span class="rus">';
       template += `<span class="caseDown">${this.rus.caseDown}</span>`;
       template += `<span class="caseUP hidden">${this.rus.caseUp}</span>`;
-      template += `<span class="caps hidden">${this.rus.caps || this.rus.caseUp}</span>`;
-      template += `<span class="loverCaps hidden">${this.rus.loverCaps || this.rus.caseDown}</span>`;
+      template += `<span class="caps hidden">${this.rus.caps}</span>`;
+      template += `<span class="loverCaps hidden">${this.rus.loverCaps}</span>`;
       template += '</span>';
     }
 
@@ -771,8 +945,8 @@ class Key {
       template += '<span class="eng hidden">';
       template += `<span class="caseDown hidden">${this.eng.caseDown}</span>`;
       template += `<span class="caseUP hidden">${this.eng.caseUp}</span>`;
-      template += `<span class="caps hidden">${this.eng.caps || this.eng.caseUp}</span>`;
-      template += `<span class="loverCaps hidden">${this.eng.loverCaps || this.eng.caseDown}</span>`;
+      template += `<span class="caps hidden">${this.eng.caps}</span>`;
+      template += `<span class="loverCaps hidden">${this.eng.loverCaps}</span>`;
       template += '</span>';
     }
 
@@ -798,8 +972,6 @@ const renderKeysToDom = () => {
   container.append(frag);
 };
 
-const eventKeys = ['Backspace', 'Tab', 'Delete', 'Enter', 'CapsLock', 'ShiftLeft', 'ShiftRight', 'ControlLeft', 'MetaLeft', 'AltLeft', 'AltRight', 'ControlRight'];
-
 const pressedKey = {
   event: null,
   code: null,
@@ -815,10 +987,10 @@ const settings = {
   CapsLockActive: false,
 };
 
-function changeCase() {
+const changeCase = () => {
   const elem = document.querySelectorAll(`span.${settings.lang}`);
   for (let i = 0; i < elem.length; i += 1) {
-    for (let j = 0; j < 3; j += 1) {
+    for (let j = 0; j < 4; j += 1) {
       if (!elem[i].querySelectorAll('span')[j].classList.contains('hidden')) {
         elem[i].querySelectorAll('span')[j].classList.add('hidden');
       }
@@ -837,7 +1009,7 @@ function changeCase() {
       settings.case = 'caseDown';
     }
   }
-}
+};
 
 const changeLang = () => {
   const elem = document.querySelectorAll(`span.${settings.lang}`);
@@ -858,25 +1030,30 @@ const changeLang = () => {
   }
 };
 
-function initLanguage() {
+const initLanguage = () => {
   if (localStorage.lang === 'eng') {
     changeLang();
   }
-}
+};
+
+const setFocus = () => {
+  textarea.focus();
+};
+setFocus();
 
 let textArea = null;
 
-function addActive() {
+const addActive = () => {
   pressedKey.element.classList.add('active');
-}
+};
 
-function removeActive() {
+const removeActive = () => {
   if (pressedKey.element) {
     if (pressedKey.element.classList.contains('active')) {
       pressedKey.element.classList.remove('active');
     }
   }
-}
+};
 
 function KeyFunction() {
   let cursorPosition = textArea.selectionStart;
@@ -947,26 +1124,49 @@ function KeyFunction() {
         changeCase();
       }
       break;
+    case 'ArrowLeft':
+      cursorPosition -= 1;
+      textArea.selectionEnd = cursorPosition;
+      break;
+    case 'ArrowRight':
+      cursorPosition += 1;
+      textArea.selectionStart = cursorPosition;
+      break;
+    case 'ControlRight':
+    case 'ControlLeft':
+    case 'AltRight':
+    case 'AltLeft':
+    case 'MetaLeft':
+      pressedKey.char = '';
+      write();
+      break;
     default:
       write();
+  }
+  if (pressedKey.event.altKey && pressedKey.event.ctrlKey && pressedKey.event.shiftKey) {
+    return (1);
   }
   if (pressedKey.event.altKey && pressedKey.event.ctrlKey) {
     changeLang();
   }
 }
 
-function keyDownHandler(event) {
+const keyDownHandler = (event) => {
   event.preventDefault();
-  pressedKey.event = event;
-  pressedKey.code = event.code;
-  [pressedKey.element] = document.getElementsByClassName(event.code);
-  pressedKey.char = pressedKey.element.querySelectorAll(':not(.hidden)')[1].textContent;
-  KeyFunction();
-  addActive();
-// "MetaLeft" === pressedKey.code ? (this.addActiveState(), setTimeout(removeActiveState.bind(this), 300)) : ["CapsLock", "ShiftLeft", "ShiftRight"].includes(pressedKey.code) || addActiveState();
-}
+  KEYS.forEach((elem) => {
+    if (elem.code === event.code) {
+      pressedKey.event = event;
+      pressedKey.code = event.code;
+      [pressedKey.element] = document.getElementsByClassName(event.code);
+      pressedKey.char = pressedKey.element.querySelectorAll(':not(.hidden)')[1].textContent;
+      KeyFunction();
+      addActive();
+      setFocus();
+    }
+  });
+};
 
-function KeyUpHandler(event) {
+const KeyUpHandler = (event) => {
   const elem = document.getElementsByClassName(event.code)[0];
   if (elem) {
     pressedKey.element = elem.closest('div');
@@ -982,26 +1182,28 @@ function KeyUpHandler(event) {
   } else {
     removeActive();
   }
-}
+};
 
-function mouseDownHandler(event) {
+const mouseDownHandler = (event) => {
   if (event.target.tagName.toLowerCase() === 'span') {
     pressedKey.event = event;
     pressedKey.element = event.target.closest('div');
-    [, , pressedKey.code] = pressedKey.element.classList;
+    [, pressedKey.code] = pressedKey.element.classList;
     pressedKey.char = event.target.textContent;
     KeyFunction();
     addActive();
+    setFocus();
     event.preventDefault();
+  } else {
+    setFocus();
   }
-}
+};
 
-function mouseUpHandler(event) {
-  pressedKey.event = event;
-  pressedKey.element = event.target.closest('div');
+const mouseUpHandler = () => {
+  setFocus();
   if (pressedKey.element) {
     if (pressedKey.element.classList.contains('key')) {
-      [, , pressedKey.code] = pressedKey.element.classList;
+      [, pressedKey.code] = pressedKey.element.classList;
     }
   }
   removeActive();
@@ -1017,18 +1219,15 @@ function mouseUpHandler(event) {
       changeCase();
     }
   }
-}
+};
 
 window.onload = function init() {
   if (KEYS) {
-    const textarea = document.createElement('textarea');
-    const title = document.createElement('p');
-    const keyboard = document.createElement('div');
-    title.innerText = 'Переключение языков пока Ctrl + Alt';
+    title.innerText = 'Переключение языков Ctrl + Alt'
     textarea.classList.add('textarea');
     textarea.setAttribute('id', 'textarea');
     textarea.autofocus = true;
-    title.classList.add('title'); // TODO нет такого стиля доделать
+    title.classList.add('title');
     keyboard.classList.add('keyboard');
     document.body.append(textarea);
     document.body.append(title);

@@ -1,2 +1,2 @@
 # Virtual-keyboard
-# [Virual-keyboard](https://ShadeZP.github.io/virual-keyboard)
+# [Virual-keyboard](https://ShadeZP.github.io/Virtual-keyboard)

@@ -1,0 +1,164 @@
+.centralizer {
+    margin: 0 auto;
+}
+
+.textarea {
+    display: block;
+    width: 700px;
+    height: 200px;
+    margin: 10px auto 10px;
+    padding: 10px;
+    font-size: 18px;
+    color: #444444;
+    resize: none;
+}
+
+.caseDown,
+.caseUp,
+.shiftCaps,
+.caps {
+    display: block;
+    min-height: 40px
+}
+
+.hidden {
+    display: none
+}
+
+.description,
+.language,
+.title {
+    margin: 10px auto;
+    text-align: center
+}
+
+.title {
+    font-size: 30px;
+}
+
+.keyboard {
+    width: 704px;
+    margin: 0 auto;
+    padding: 2px;
+    padding-left: 0;
+    padding-bottom: 12px;
+    background: #888888;
+    border: 3px solid #222222;
+    border-radius: 2px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.keyboard .row {
+    clear: both;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 8px
+}
+
+.key {
+    width: 40px;
+    height: 40px;
+    margin-left: 6px;
+    margin-top: 6px;
+    font-weight: 500;
+    line-height: 40px;
+    text-align: center;
+    color: #ffffff;
+    background-image: linear-gradient(to right, #000000 0%, #3D3D3D 51%, #828288 100%);
+    background-size: 200% auto;
+    transition: 1s;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.keyboard .key.active {    
+    font-size: 1.4rem;
+    color: red;
+    animation: 0.1s tremor ease-out infinite;
+    -webkit-animation: 0.1s tremor ease-out infinite; 
+}
+
+@-webkit-keyframes tremor {
+    0%, 25% {
+        left: -1px;
+        top:-1px;
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px);
+    }
+    50%, 100% {
+        left: 1px;
+        top: 1px;
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+}
+@-moz-keyframes tremor {
+    0%, 25% {
+        left: -1px;
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px);
+    }
+    50%, 100% {
+        left: 1px;
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+}
+@-ms-keyframes tremor {
+    0%, 25% {
+        left: -1px;
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px);
+    }
+    50%, 100% {
+        left: 1px;
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+}
+@-o-keyframes tremor {
+    0%, 25% {
+        left: -1px;
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px);
+    }
+    50%, 100% {
+        left: 1px;
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+}
+@keyframes tremor {
+    0%, 25% {
+        left: -1px;
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px);
+    }
+    50%, 100% {
+        left: 1px;
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+}
+
+.key:hover {
+    background-position: right center;
+}
+
+.keyboard .Tab {
+    width: 50px
+}
+
+.keyboard .large {
+    width: 100px
+}
+
+.keyboard .middle {
+    width: 86px
+}
+
+.keyboard .Space {
+    width: 330px
+}
